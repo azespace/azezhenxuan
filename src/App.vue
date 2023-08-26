@@ -8,6 +8,7 @@
       layout="prev, pager, next,total,size,jumper"
       :total="1000"
     />
+    <!-- 这里可以使用SvgIcon标签也就是子组件，也可以使用svg-icon这是插件作者自定义的标签可以当作组件使用 -->
     <svg-icon name="plus" color="red" width="300px" height="300px"></svg-icon>
   </div>
 </template>

@@ -1,4 +1,4 @@
-//用户信息数据
+//mock用户信息数据 不需要导入，自动扫描根目录下的mock文件夹
 function createUserList() {
   return [
       {

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- svg标签用来创建一个 SVG 元素的标签，user表示引用外部的 SVG 图标文件使用:表示绑定属性 都是动态属性由父组件传值 -->
     <svg :style="{ width: width, height: height }">
       <use :xlink:href="prefix + name" :fill="color"></use>
     </svg>
@@ -7,6 +8,7 @@
 </template>
 
 <script setup lang="ts">
+//定义组件的属性
 defineProps({
   //xlink:href属性值的前缀
   prefix: {

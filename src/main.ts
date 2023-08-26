@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
-//@ts-ignore   <-让ts忽略类型检测 不忽略无法打包
 import App from '@/App.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+// 引入svg图标
 import 'virtual:svg-icons-register'
 //@ts-ignore   <-让ts忽略类型检测 不忽略无法打包
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
@@ -14,4 +14,5 @@ app.use(ElementPlus, {
   locale: zhCn,
 })
 app.use(gloalComponent); //安装自定义插件
+//将id为vue的dom元素渲染到页面上
 app.mount('#app')
