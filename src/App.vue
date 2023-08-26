@@ -15,18 +15,18 @@
 
 <script lang="ts" setup>
 import { Plus } from '@element-plus/icons-vue'
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 import { reqLogin } from '@/api/user'
 onMounted(() => {
-  reqLogin({username:'admin',password:'111111'})
+  reqLogin({ username: 'admin', password: '111111' })
 })
 </script>
 <style lang="scss" scoped>
 div {
-  h1{
+  h1 {
     width: 100%;
     height: 100%;
-    background-color:$base-color;
+    background-color: $base-color;
   }
 }
 </style>
