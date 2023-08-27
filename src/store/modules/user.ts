@@ -8,7 +8,7 @@ import { reqLogin } from '@/api/user/index'
 
 let userStore = defineStore('User', {
   //数据存储
-  state: ():userState => {
+  state: (): userState => {
     return { token: localStorage.getItem('token') }
   },
   actions: {
@@ -22,8 +22,8 @@ let userStore = defineStore('User', {
       let result: loginResponse = await reqLogin(data)
       if (result.code == 200) {
         //as string表示断言为string类型，强制转换成string 如果不是string类型，会报错
-        this.token = (result.data.token as string)
-        localStorage.setItem('token', (result.data.token as string))
+        this.token = result.data.token as string
+        localStorage.setItem('token', result.data.token as string)
         return 'ok'
       } else {
         return Promise.reject(new Error(result.data.message))

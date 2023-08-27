@@ -63,12 +63,13 @@ pnpm install pinia
 ```
 
 ### vue-router => vue路由管理
+
 ```
 pnpm install vue-router
 ```
 
-
 #### 关于TypeJs的一些语法
+
 ```
 interface responseDataType {
   // 加个问好表示可能存在返回值没有token的情况
@@ -94,20 +95,20 @@ async userLogin(data: loginForm) {
 }
 ```
 
-
 #### 关于vue3的语法
+
 ```
 <!-- <router-view> 是 Vue Router 提供的一个组件，用于渲染匹配的路由内容。在这个例子中，根据当前路由，<router-view> 会渲染不同的组件内容 -->
 <router-view></router-view>
 
-//reactive是vue3的响应式api用于绑定对象，ref是用于绑定基本数据类型 
+//reactive是vue3的响应式api用于绑定对象，ref是用于绑定基本数据类型
 import { reactive,ref } from 'vue'
 //可以先定义后使用这个数据，不加默认值表示undefind
 let xxx = ref();
 ```
 
-
 #### 关于css的语法
+
 ```
 // 视口高度也就是和浏览器可见区域保持一致的高度
 height: 100vh;

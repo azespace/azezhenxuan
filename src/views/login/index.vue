@@ -22,7 +22,13 @@
             ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" round class="login_btn" @click="login" :loading="isLoading">
+            <el-button
+              type="primary"
+              round
+              class="login_btn"
+              @click="login"
+              :loading="isLoading"
+            >
               登录
             </el-button>
           </el-form-item>
@@ -36,7 +42,7 @@
 //引入element图标 单一引入这样性能比较高
 import { User, Lock } from '@element-plus/icons-vue'
 //收集账户和密码 reactive是vue3的响应式api用于绑定对象，ref是用于绑定基本数据类型
-import { reactive,ref } from 'vue'
+import { reactive, ref } from 'vue'
 //引入用户数据仓库
 import userStore from '@/store/modules/user'
 import { ElNotification } from 'element-plus'
@@ -45,10 +51,10 @@ let loginForm = reactive({
   username: '',
   password: '',
 })
-let isLoading = ref(false);
+let isLoading = ref(false)
 const login = async () => {
   //登录按钮加载效果
-  isLoading.value = true;
+  isLoading.value = true
   //登录后调用pinia仓库中心的action方法，将用户数据传入
   try {
     //await等待异步操作完成
@@ -58,14 +64,14 @@ const login = async () => {
       message: '欢迎回来',
       type: 'success',
     })
-    isLoading.value = false;
+    isLoading.value = false
   } catch (error) {
     ElNotification({
       title: '登录失败',
       message: '用户名密码错误',
       type: 'error',
     })
-    isLoading.value = false;
+    isLoading.value = false
   }
 }
 //todo 增加鼠标放在登录按钮上如果用户密码没有校验成功则登录按钮飘来飘去的3D效果

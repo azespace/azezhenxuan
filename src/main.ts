@@ -15,7 +15,7 @@ const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn,
 })
-app.use(router) //安装路由器  
+app.use(router) //安装路由器
 app.use(pinia) //安装数据仓库
 app.use(gloalComponent) //安装自定义插件
 //将id为vue的dom元素渲染到页面上
