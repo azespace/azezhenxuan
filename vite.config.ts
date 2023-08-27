@@ -16,9 +16,9 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         // Specify symbolId format
         symbolId: 'icon-[dir]-[name]',
       }),
-      //mock插件3.0版本配置
+      //mock插件2.9版本配置
       viteMockServe({
-        enable: true,
+        localEnabled: true,
       }),
     ],
     //别名配置

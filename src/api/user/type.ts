@@ -6,7 +6,9 @@ export interface loginForm {
 
 //登录接口返回数据的ts类型
 interface responseDataType {
-  token: string
+  // 加个问好表示可能存在返回值没有token的情况
+  token?: string,
+  message?: string
 }
 
 export interface loginResponse {
