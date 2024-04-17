@@ -3,7 +3,7 @@
 import SvgIcon from '@/components/SvgIcon/index.vue'
 // 定义一个对象 存储各种全局组件
 const allGloalComponent: any = { SvgIcon }
-// 自定义插件需要你暴露install方法，这是规定，会在安装插件时被调用 
+// 自定义插件需要你暴露install方法，这是规定，会在安装插件时被调用
 export default {
   // 利用插件实现全局安装vue组件
   install(app: any) {

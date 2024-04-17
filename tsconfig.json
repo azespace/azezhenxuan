@@ -34,7 +34,7 @@
     "noUnusedParameters": true,
     // 报告switch语句的case落空
     "noFallthroughCasesInSwitch": true,
-    // Element Plus全局组件类型声明 
+    // Element Plus全局组件类型声明
     "types": ["element-plus/global"],
     //别名配置
     "baseUrl": ".", // 解析非相对模块的基地址，默认是当前目录

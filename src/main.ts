@@ -14,7 +14,7 @@ import pinia from '@/store'
 //@ts-ignore   <-让ts忽略下一行代码的类型检测 不忽略无法打包，注意这不是一个注释 写法就是//@ts-ignore
 // 引入Element Plus的中文语言包
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
-// 引入全局自定义插件对象，用来注册整个项目的全局组件 
+// 引入全局自定义插件对象，用来注册整个项目的全局组件
 import gloalComponent from '@/components/index'
 // 导入全局scss样式
 import '@/styles/index.scss'

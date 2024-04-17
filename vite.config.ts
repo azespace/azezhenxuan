@@ -24,7 +24,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         // 设置svg的ID格式写法
         symbolId: 'icon-[dir]-[name]',
       }),
-      // mock插件2.9版本配置 
+      // mock插件2.9版本配置
       viteMockServe({
         localEnabled: true,
       }),

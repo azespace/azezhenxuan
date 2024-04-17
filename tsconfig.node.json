@@ -1,5 +1,6 @@
 // 这个文件是ts的配置文件，但是一般用于nodejs环境，在编译nodejs环境的ts代码的时候有作用
-{ // 编译选项
+{
+  // 编译选项
   "compilerOptions": {
     // 启用项目编译
     "composite": true,

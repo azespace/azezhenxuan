@@ -1,4 +1,4 @@
-// 引入默认用户小仓库函数 
+// 引入默认用户小仓库函数
 import { defineStore } from 'pinia'
 // 引入ts数据对象类型
 import type { loginForm, loginResponse } from '@/api/user/type'
