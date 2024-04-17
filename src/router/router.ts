@@ -15,6 +15,7 @@ export const constantRoute = [
     name: '404',
   },
   {
+    // 找不到页面时重定向到404页面
     path: '/:pathMatch(.*)*',
     redirect: '/404',
     name: 'any',

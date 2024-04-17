@@ -3,16 +3,16 @@
     <el-row>
       <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
-        <el-form class="login_form">
+        <el-form class="login_form" :modle="loginForm" :rules="rules">
           <h1>阿泽空间站</h1>
-          <el-form-item>
+          <el-form-item prop="username">
             <el-input
               placeholder="请输入用户名"
               :prefix-icon="User"
               v-model="loginForm.username"
             ></el-input>
           </el-form-item>
-          <el-form-item>
+          <el-form-item prop="password">
             <el-input
               type="password"
               placeholder="请输入密码"
@@ -47,15 +47,17 @@ import { reactive, ref } from 'vue'
 import userStore from '@/store/modules/user'
 import { ElNotification } from 'element-plus'
 let userLoginStore = userStore()
+// 让数据变成响应式的，将视图和这个组件的数据进行绑定，自动更新视图，方便状态管理，优化性能等好处。
 let loginForm = reactive({
   username: '',
   password: '',
 })
+// 和reactive类似，但是ref只能绑定基本数据类型，而reactive可以绑定对象，数组等。且需要通过.value来访问。解构对象依旧具有响应特性，而reactive会失去响应特性
 let isLoading = ref(false)
 const login = async () => {
   //登录按钮加载效果
   isLoading.value = true
-  //登录后调用pinia仓库中心的action方法，将用户数据传入
+  //登录后调用pinia仓库中心的自定义的action方法，将用户数据传入
   try {
     //await等待异步操作完成
     await userLoginStore.userLogin(loginForm)
@@ -73,6 +75,16 @@ const login = async () => {
     })
     isLoading.value = false
   }
+}
+const rules = {
+  username: [
+    { required: true, message: '请输入用户名', trigger: 'blur' },
+    { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' },
+  ],
+  password: [
+    { required: true, message: '请输入密码', trigger: 'blur' },
+    { min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur' },
+  ],
 }
 //todo 增加鼠标放在登录按钮上如果用户密码没有校验成功则登录按钮飘来飘去的3D效果
 </script>

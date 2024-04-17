@@ -1,10 +1,17 @@
-{
+// 这个文件是ts的配置文件，但是一般用于nodejs环境，在编译nodejs环境的ts代码的时候有作用
+{ // 编译选项
   "compilerOptions": {
+    // 启用项目编译
     "composite": true,
+    // 跳过所有声明文件（*.d.ts）的类型检查。
     "skipLibCheck": true,
+    // 模块使用最新的ECMAScript模块语法。
     "module": "ESNext",
+    // 设置模块解析策略为bundler 用于支持打包器 比如webpack
     "moduleResolution": "bundler",
+    // 允许从没有设置默认导出的模块中导出默认成为，比如import React from 'react'而不是import * as React from 'react'。
     "allowSyntheticDefaultImports": true
   },
+  // 该配置包含在vite.config.ts中
   "include": ["vite.config.ts"]
 }

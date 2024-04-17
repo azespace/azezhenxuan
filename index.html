@@ -1,13 +1,18 @@
+<!-- 这个文件是我们的入口文件，我们的应用程序将从这里开始。我们将在这里引入我们的Vue应用程序，并将其挂载到页面上。 -->
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
+    <!-- 设置网页图标 -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- 页面设置成响应式 适应移动端 页面会根据视口自动调整大小 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue + TS</title>
+    <title>小明VUE3</title>
   </head>
   <body>
+    <!-- vue引用挂载点位置在这里 -->
     <div id="app"></div>
+    <!-- 加载并执行/src/main.ts ,module表示ECMAScript模块可以使用import和export语法 -->
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

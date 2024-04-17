@@ -1,33 +1,50 @@
+// 这个文件用于控制ts编译器的行为
 {
+  // 编译属性配置
   "compilerOptions": {
+    // 设置编译后的javascript版本
     "target": "ES2020",
+    // 启动ECMAScript私有字段
     "useDefineForClassFields": true,
+    // 设置模块代码类型为ECMAScript模块 即最新的模块语法
     "module": "ESNext",
+    // 需要包含在编译中的文件
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    // 跳过所有申明文件(*.d.ts) 的类型检查
     "skipLibCheck": true,
 
-    /* Bundler mode */
+    // 设置模块解析策略为nodejs
     "moduleResolution": "node",
+    // 允许导入ts文件
     "allowImportingTsExtensions": true,
+    // 允许导入.json模块
     "resolveJsonModule": true,
+    // 每个文件都作为单独的模块
     "isolatedModules": true,
+    // 不生成编译后的文件
     "noEmit": true,
+    // 保留jsx元素，不转换
     "jsx": "preserve",
 
-    /* Linting */
+    // 启动所有严格类型检查
     "strict": true,
+    // 报告未使用的变量
     "noUnusedLocals": true,
+    // 报告未使用的函数参数
     "noUnusedParameters": true,
+    // 报告switch语句的case落空
     "noFallthroughCasesInSwitch": true,
-    // Element Plus全局组件类型声明
+    // Element Plus全局组件类型声明 
     "types": ["element-plus/global"],
     //别名配置
-    "baseUrl": "./", // 解析非相对模块的基地址，默认是当前目录
+    "baseUrl": ".", // 解析非相对模块的基地址，默认是当前目录
     "paths": {
-      //路径映射，相对于baseUrl
+      //路径映射，相对于baseUrl，不会和vite.config.ts的alias冲突,他们用于不同的环境
       "@/*": ["src/*"]
     }
   },
+  // 指定需要包含在编译中的文件
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  // 指定项目引用 这里将tsconfig.node.json引入
   "references": [{ "path": "./tsconfig.node.json" }]
 }
